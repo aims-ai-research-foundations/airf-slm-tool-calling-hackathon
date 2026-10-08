@@ -1,0 +1,87 @@
+[
+  {
+    "name": "send_money",
+    "description": "Send money to another person.",
+    "parameters": {
+      "recipient": "string",
+      "amount": "number",
+      "currency": "string",
+      "provider": "string"
+    }
+  },
+  {
+    "name": "buy_airtime",
+    "description": "Buy mobile airtime.",
+    "parameters": {
+      "phone": "string",
+      "amount": "number",
+      "network": "string"
+    }
+  },
+  {
+    "name": "buy_data",
+    "description": "Buy a mobile data bundle.",
+    "parameters": {
+      "phone": "string",
+      "amount": "number",
+      "network": "string"
+    }
+  },
+  {
+    "name": "check_balance",
+    "description": "Check a mobile money account balance.",
+    "parameters": {
+      "provider": "string"
+    }
+  },
+  {
+    "name": "buy_electricity_token",
+    "description": "Purchase an electricity token.",
+    "parameters": {
+      "meter_number": "string",
+      "amount": "number",
+      "currency": "string"
+    }
+  },
+  {
+    "name": "report_outage",
+    "description": "Report an electricity outage.",
+    "parameters": {
+      "location": "string"
+    }
+  },
+  {
+    "name": "get_crop_price",
+    "description": "Get the current market price of a crop.",
+    "parameters": {
+      "crop": "string",
+      "location": "string"
+    }
+  },
+  {
+    "name": "get_weather",
+    "description": "Get the weather forecast for a location.",
+    "parameters": {
+      "location": "string",
+      "date": "string"
+    }
+  },
+  {
+    "name": "convert_currency",
+    "description": "Convert an amount from one currency to another.",
+    "parameters": {
+      "amount": "number",
+      "from_currency": "string",
+      "to_currency": "string"
+    }
+  },
+  {
+    "name": "set_reminder",
+    "description": "Set a reminder for the user.",
+    "parameters": {
+      "task": "string",
+      "date": "string",
+      "time": "string"
+    }
+  }
+]

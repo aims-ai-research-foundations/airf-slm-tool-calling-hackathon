@@ -554,6 +554,8 @@ Place `predictions.json` at the top level of your submission ZIP file.
 
 The [starter notebook](starter_notebook.ipynb) will provide a baseline model and show how to train it and generate a submission.
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aims-ai-research-foundations/airf-slm-tool-calling-hackathon/blob/main/starter_notebook.ipynb)
+
 # The Question
 
 Large models can call tools.

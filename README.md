@@ -135,6 +135,9 @@ For example:
 }
 ```
 
+<details>
+<summary><b>See all 10 tool schemas</b></summary>
+
 The complete benchmark contains **10 tools**:
 
 ```json
@@ -227,13 +230,16 @@ The complete benchmark contains **10 tools**:
 ]
 ```
 
+</details>
+
 Each individual example contains **4–6 of these tools**, including the relevant tool and distractors.
 
 ## Training Examples
 
 The training data is intentionally simple.
 
-### Example 1
+<details>
+<summary><b>Example 1</b>: “Abeg send 5k naira to Tunde on MTN MoMo.”</summary>
 
 ```json
 {
@@ -254,7 +260,10 @@ The training data is intentionally simple.
 }
 ```
 
-### Example 2
+</details>
+
+<details>
+<summary><b>Example 2</b>: “Buy 1,000 naira airtime for this number 08031234567 on Airtel.”</summary>
 
 ```json
 {
@@ -274,7 +283,10 @@ The training data is intentionally simple.
 }
 ```
 
-### Example 3
+</details>
+
+<details>
+<summary><b>Example 3</b>: “What's the maize price around Nakuru today?”</summary>
 
 ```json
 {
@@ -293,7 +305,10 @@ The training data is intentionally simple.
 }
 ```
 
-### Example 4
+</details>
+
+<details>
+<summary><b>Example 4</b>: “How much is 50,000 naira in Kenyan shillings?”</summary>
 
 ```json
 {
@@ -313,7 +328,10 @@ The training data is intentionally simple.
 }
 ```
 
-### Example 5: Multiple Tool Calls
+</details>
+
+<details>
+<summary><b>Example 5: Multiple Tool Calls</b>: “Check my M-Pesa balance, then send 500 bob from it to Otieno.”</summary>
 
 Some requests require several actions.
 
@@ -346,6 +364,8 @@ Some requests require several actions.
 }
 ```
 
+</details>
+
 For multiple calls, the calls must be returned **in the correct order**.
 
 ## Missing Information
@@ -359,6 +379,9 @@ For example:
 The request does not specify the provider.
 
 In the training data, the missing value is represented as `null`:
+
+<details>
+<summary><b>See the training example</b></summary>
 
 ```json
 {
@@ -379,11 +402,16 @@ In the training data, the missing value is represented as `null`:
 }
 ```
 
+</details>
+
 **A model should never invent information that is not in the request.**
 
 ## African Contexts
 
 The language of the benchmark is **English**, but the world represented in the data is African.
+
+<details>
+<summary><b>Countries</b></summary>
 
 Requests span:
 
@@ -396,6 +424,11 @@ Requests span:
 - South Africa
 - Zambia
 - Ethiopia
+
+</details>
+
+<details>
+<summary><b>What varies across examples</b></summary>
 
 Examples vary across:
 
@@ -410,6 +443,11 @@ Examples vary across:
 - Local expressions and chat shorthand
 - Short and detailed requests
 
+</details>
+
+<details>
+<summary><b>Example requests</b></summary>
+
 For example:
 
 > "Abeg send 5k to Tunde."
@@ -421,6 +459,8 @@ For example:
 > "How much is maize going for around Nakuru?"
 
 > "Set a reminder for me to call Mum at 6pm tomorrow."
+
+</details>
 
 The **dataset structure stays simple**. The diversity comes from the situations and language used in the requests.
 
@@ -448,6 +488,9 @@ A prediction is correct only when the selected tool and **all of its parameters*
 
 For multiple tool calls, **every call must be correct and in the correct order**.
 
+<details>
+<summary><b>Example: what counts as wrong</b></summary>
+
 For example, the correct answer is:
 
 ```json
@@ -468,12 +511,19 @@ A prediction with the correct tool and amount but the wrong provider is wrong.
 
 A prediction that adds a value not present in the request is wrong.
 
+</details>
+
+<details>
+<summary><b>How answers are compared</b></summary>
+
 When answers are compared:
 
 - Text ignores case, punctuation and extra spaces, so `"m-pesa"` matches `"M-Pesa"`.
 - Numbers are compared as numbers: `5000` matches `5000.0`, but the text `"5000"` does not.
 - A parameter left out counts as `null`.
 - A list containing one call is the same as that call.
+
+</details>
 
 ### Score
 
@@ -517,6 +567,9 @@ The final leaderboard is determined by **Exact-Match Accuracy on the test set**.
 
 Submit a `predictions.json` file containing the prediction for every example.
 
+<details>
+<summary><b>Example <code>predictions.json</code></b></summary>
+
 For example:
 
 ```json
@@ -549,6 +602,8 @@ For example:
   ]
 }
 ```
+
+</details>
 
 Place `predictions.json` at the top level of your submission ZIP file.
 
